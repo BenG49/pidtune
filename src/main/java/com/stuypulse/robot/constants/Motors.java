@@ -22,6 +22,14 @@ import com.revrobotics.CANSparkMax.IdleMode;
  */
 public interface Motors {
 
+    public interface Drivetrain {
+        int CURRENT_LIMIT_AMPS = 60;
+        IdleMode IDLE_MODE = IdleMode.kBrake;
+
+        CANSparkMaxConfig LEFT = new CANSparkMaxConfig(true, IDLE_MODE, CURRENT_LIMIT_AMPS);
+        CANSparkMaxConfig RIGHT = new CANSparkMaxConfig(false, IDLE_MODE, CURRENT_LIMIT_AMPS);
+    }
+
     /** Classes to store all of the values a motor needs */
 
     public static class TalonSRXConfig {
